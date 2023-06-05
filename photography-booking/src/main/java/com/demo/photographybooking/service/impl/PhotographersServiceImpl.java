@@ -46,7 +46,7 @@ public class PhotographersServiceImpl implements PhotographerService {
             }
 
         } catch (Exception e) {
-            System.out.println("Error get all photographers: " + e.getMessage());
+            System.out.println("Error get photographers: " + id);
         }
 
         return response;

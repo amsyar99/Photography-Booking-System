@@ -5,11 +5,10 @@ import com.demo.photographybooking.entity.Photographers;
 import com.demo.photographybooking.service.CustomerService;
 import com.demo.photographybooking.service.PhotographerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class PhotographerController {
@@ -25,12 +24,18 @@ public class PhotographerController {
         return customerService.fetchAllCustomers();
     }
 
+    @PostMapping("/getCustomersById")
+    public Customer getCustomersById(@RequestBody Map<String, String> requestParams) {
+        String id = requestParams.get("id");
+        return customerService.fetchById(id);
+    }
+
     @GetMapping("/getPhotographers")
     public List<Photographers> getAllPhotographers() {
         return photographerService.fetchAllPhotographers();
     }
 
-    @GetMapping("/getPhotographersById")
+    @PostMapping("/getPhotographersById")
     public Photographers getPhotographersById(@RequestParam(name = "id") String id) {
         return photographerService.fetchById(id);
     }

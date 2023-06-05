@@ -12,4 +12,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     @Query(value = "SELECT * FROM CUSTOMERS LIMIT 1000 ORDER BY ID")
     List<Customer> fetchAllCustomers();
+
+    @Query(value = "SELECT * FROM CUSTOMER WHERE ID = ")
+    Customer fetchById(String id);
 }

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CustomerService {
     List<Customer> fetchAllCustomers();
+
+    Customer fetchById(String id);
 }
