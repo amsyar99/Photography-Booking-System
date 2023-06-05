@@ -1,2 +1,2 @@
-# Photography-Booking-System
+# FlashBook System
 photography booking system project
