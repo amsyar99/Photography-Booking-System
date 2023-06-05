@@ -1,9 +1,9 @@
 package com.demo.photographybooking.service;
 
+import com.demo.photographybooking.entity.Customer;
+
 import java.util.List;
 
 public interface CustomerService {
-
-    public List<String> fetchAllCustomers();
-
+    List<Customer> fetchAllCustomers();
 }

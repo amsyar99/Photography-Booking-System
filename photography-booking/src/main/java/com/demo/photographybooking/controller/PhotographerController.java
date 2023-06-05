@@ -1,5 +1,6 @@
 package com.demo.photographybooking.controller;
 
+import com.demo.photographybooking.entity.Customer;
 import com.demo.photographybooking.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ public class PhotographerController {
     CustomerService customerService;
 
     @GetMapping("/getCustomers")
-    public List<String> getAllCustumers() {
-        return customerService.
+    public List<Customer> getAllCustumers() {
+        return customerService.fetchAllCustomers();
     }
 }
