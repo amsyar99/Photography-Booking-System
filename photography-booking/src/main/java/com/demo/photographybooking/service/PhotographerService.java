@@ -8,4 +8,8 @@ public interface PhotographerService {
     List<Photographer> fetchAllPhotographers();
 
     Photographer fetchById(String id);
+    List<Photographer> fetchByName(String name);
+
+    Photographer fetchByEmail(String email);
+
 }

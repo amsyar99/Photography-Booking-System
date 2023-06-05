@@ -52,5 +52,41 @@ public class PhotographersServiceImpl implements PhotographerService {
         return response;
     }
 
+    @Override
+    public List<Photographer> fetchByName(String name) {
+        List<Photographer> response = new ArrayList<>();
+
+        try {
+            List<Photographer> list = photographersRepository.fetchByName(name);
+
+            if (!list.isEmpty()) {
+                response.addAll(list);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error get photographers by name: " + e.getMessage());
+        }
+
+        return response;
+    }
+
+    @Override
+    public Photographer fetchByEmail(String email) {
+        Photographer response = new Photographer();
+
+        try {
+            Photographer photographers = photographersRepository.fetchByEmail(email);
+
+            if (Objects.nonNull(photographers)) {
+                response = photographers;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error get photographers by email: " + e.getMessage());
+        }
+
+        return response;
+    }
+
 
 }

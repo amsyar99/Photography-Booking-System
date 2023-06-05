@@ -40,4 +40,14 @@ public class PhotographerController {
         String id = requestParams.get("id");
         return photographerService.fetchById(id);
     }
+
+    @GetMapping("/getPhotographersById")
+    public List<Photographer> getPhotographersByName(@RequestParam(name = "name") String name) {
+        return photographerService.fetchByName(name);
+    }
+
+    @GetMapping("/getPhotographersByEmail")
+    public Photographer getPhotographersByEmail(@RequestParam(name = "email") String email) {
+        return photographerService.fetchByEmail(email);
+    }
 }
