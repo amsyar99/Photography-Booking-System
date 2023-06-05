@@ -15,7 +15,7 @@ public class PhotographerController {
     CustomerService customerService;
 
     @GetMapping("/getCustomers")
-    public List<Customer> getAllCustumers() {
+    public List<Customer> getAllCustomers() {
         return customerService.fetchAllCustomers();
     }
 }
