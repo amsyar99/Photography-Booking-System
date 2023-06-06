@@ -1,11 +1,11 @@
 package com.demo.photographybooking.service;
 
-import com.demo.photographybooking.entity.Photographers;
+import com.demo.photographybooking.entity.Photographer;
 
 import java.util.List;
 
 public interface PhotographerService {
-    public List<Photographers> fetchAllPhotographers();
+    List<Photographer> fetchAllPhotographers();
 
-    public Photographers fetchById(String id);
+    Photographer fetchById(String id);
 }

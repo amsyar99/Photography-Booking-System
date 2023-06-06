@@ -1,6 +1,6 @@
 package com.demo.photographybooking.service.impl;
 
-import com.demo.photographybooking.entity.Photographers;
+import com.demo.photographybooking.entity.Photographer;
 import com.demo.photographybooking.repository.PhotographersRepository;
 import com.demo.photographybooking.service.PhotographerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +17,11 @@ public class PhotographersServiceImpl implements PhotographerService {
     PhotographersRepository photographersRepository;
 
     @Override
-    public List<Photographers> fetchAllPhotographers() {
-        List<Photographers> response = new ArrayList<>();
+    public List<Photographer> fetchAllPhotographers() {
+        List<Photographer> response = new ArrayList<>();
 
         try {
-            List<Photographers> list = photographersRepository.fetchAll();
+            List<Photographer> list = photographersRepository.fetchAllPhotographers();
 
             if (!list.isEmpty()) {
                 response.addAll(list);
@@ -35,14 +35,14 @@ public class PhotographersServiceImpl implements PhotographerService {
     }
 
     @Override
-    public Photographers fetchById(String id) {
-        Photographers response = new Photographers();
+    public Photographer fetchById(String id) {
+        Photographer response = new Photographer();
 
         try {
-            Photographers photographers = photographersRepository.fetchById(id);
+            Photographer photographer = photographersRepository.fetchById(id);
 
-            if (Objects.nonNull(photographers)) {
-                response = photographers;
+            if (Objects.nonNull(photographer)) {
+                response = photographer;
             }
 
         } catch (Exception e) {

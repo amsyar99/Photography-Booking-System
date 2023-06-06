@@ -1,7 +1,7 @@
 package com.demo.photographybooking.controller;
 
 import com.demo.photographybooking.entity.Customer;
-import com.demo.photographybooking.entity.Photographers;
+import com.demo.photographybooking.entity.Photographer;
 import com.demo.photographybooking.service.CustomerService;
 import com.demo.photographybooking.service.PhotographerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +31,12 @@ public class PhotographerController {
     }
 
     @GetMapping("/getPhotographers")
-    public List<Photographers> getAllPhotographers() {
+    public List<Photographer> getAllPhotographers() {
         return photographerService.fetchAllPhotographers();
     }
 
     @PostMapping("/getPhotographersById")
-    public Photographers getPhotographersById(@RequestParam(name = "id") String id) {
+    public Photographer getPhotographersById(@RequestParam(name = "id") String id) {
         return photographerService.fetchById(id);
     }
 }
