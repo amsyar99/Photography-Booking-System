@@ -36,7 +36,8 @@ public class PhotographerController {
     }
 
     @PostMapping("/getPhotographersById")
-    public Photographer getPhotographersById(@RequestParam(name = "id") String id) {
+    public Photographer getPhotographersById(@RequestBody Map<String, String> requestParams) {
+        String id = requestParams.get("id");
         return photographerService.fetchById(id);
     }
 }
