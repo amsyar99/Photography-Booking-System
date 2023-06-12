@@ -14,12 +14,12 @@ public interface PhotographersRepository extends JpaRepository<Photographer, Lon
     @Query(value = "SELECT p FROM Photographer p  ORDER BY p.id LIMIT 1000")
     List<Photographer> fetchAllPhotographers();
 
-    @Query("SELECT p FROM Photographer p WHERE p.id = :id")
-    Photographer fetchById(@Param("id") String id);
+    @Query("SELECT p FROM Photographer p WHERE p.id = ?1")
+    Photographer fetchById(String id);
 
-    @Query(value = "SELECT * FROM Photographer p WHERE p.name like %:name%")
-    List<Photographer> fetchByName(@Param("name") String name);
+    @Query(value = "SELECT p FROM Photographer p WHERE p.name like %?1%")
+    List<Photographer> fetchByName(String name);
 
-    @Query(value = "SELECT * FROM Photographer p WHERE p.email = :email")
-    Photographer fetchByEmail(@Param("email") String email);
+    @Query(value = "SELECT p FROM Photographer p WHERE p.email = ?1")
+    Photographer fetchByEmail(String email);
 }

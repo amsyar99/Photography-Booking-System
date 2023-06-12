@@ -41,13 +41,15 @@ public class PhotographerController {
         return photographerService.fetchById(id);
     }
 
-    @GetMapping("/getPhotographersById")
-    public List<Photographer> getPhotographersByName(@RequestParam(name = "name") String name) {
+    @PostMapping("/getPhotographersByName")
+    public List<Photographer> getPhotographersByName(@RequestBody Map<String, String> requestParams) {
+        String name = requestParams.get("name");
         return photographerService.fetchByName(name);
     }
 
-    @GetMapping("/getPhotographersByEmail")
-    public Photographer getPhotographersByEmail(@RequestParam(name = "email") String email) {
+    @PostMapping("/getPhotographersByEmail")
+    public Photographer getPhotographersByEmail(@RequestBody Map<String, String> requestParams) {
+        String email = requestParams.get("email");
         return photographerService.fetchByEmail(email);
     }
 }
