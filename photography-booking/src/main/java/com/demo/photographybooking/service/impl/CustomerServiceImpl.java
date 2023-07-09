@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer fetchById(String id) {
+    public Customer fetchById(Long id) {
         Customer response = new Customer();
 
         try {

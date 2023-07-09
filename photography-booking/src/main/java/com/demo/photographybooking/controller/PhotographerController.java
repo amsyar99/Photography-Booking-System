@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class PhotographerController {
 
     @Autowired
@@ -26,7 +27,7 @@ public class PhotographerController {
 
     @PostMapping("/getCustomersById")
     public Customer getCustomersById(@RequestBody Map<String, String> requestParams) {
-        String id = requestParams.get("id");
+        long id = Long.parseLong(requestParams.get("id"));
         return customerService.fetchById(id);
     }
 
