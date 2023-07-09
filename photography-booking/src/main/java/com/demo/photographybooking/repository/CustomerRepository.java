@@ -15,5 +15,5 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> fetchAllCustomers();
 
     @Query("SELECT c FROM Customer c WHERE c.id = :id")
-    Customer fetchById(@Param("id") String id);
+    Customer fetchById(@Param("id") long id);
 }
