@@ -12,6 +12,13 @@ import lombok.NoArgsConstructor;
 @Table( name = "customer")
 public class Customer {
 
+    public Customer(String name, String email, String password) {
+        // Constructor with name, email, and password parameters
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,5 +28,8 @@ public class Customer {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
 }
