@@ -1,8 +1,6 @@
 package com.demo.photographybooking.controller;
 
-import com.demo.photographybooking.entity.Customer;
 import com.demo.photographybooking.entity.Photographer;
-import com.demo.photographybooking.service.CustomerService;
 import com.demo.photographybooking.service.PhotographerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,21 +13,7 @@ import java.util.Map;
 public class PhotographerController {
 
     @Autowired
-    CustomerService customerService;
-
-    @Autowired
     PhotographerService photographerService;
-
-    @GetMapping("/getCustomers")
-    public List<Customer> getAllCustomers() {
-        return customerService.fetchAllCustomers();
-    }
-
-    @PostMapping("/getCustomersById")
-    public Customer getCustomersById(@RequestBody Map<String, String> requestParams) {
-        long id = Long.parseLong(requestParams.get("id"));
-        return customerService.fetchById(id);
-    }
 
     @GetMapping("/getPhotographers")
     public List<Photographer> getAllPhotographers() {
